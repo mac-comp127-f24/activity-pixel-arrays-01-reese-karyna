@@ -3,19 +3,28 @@ import java.util.Scanner;
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.Image;
 
+
 public class ImageTransform {
 
+    public static float[] pixels;
     public static Image lighten(Image srcImage) {
         // TODO: Task 1
-
-        throw new UnsupportedOperationException("Method not yet defined");
+        //throw new UnsupportedOperationException("Method not yet defined");
+        pixels = srcImage.toFloatArray(Image.PixelFormat.RGB);
+        for (int p = 0; p < pixels.length; p++) {
+            pixels[p] *= 1.5;
+        }
+        return new Image(srcImage.getImageWidth(),srcImage.getImageHeight(), pixels, Image.PixelFormat.RGB);
     }
 
 
     public static Image greenShift(Image srcImage) {
         // TODO: Task 2
-
-        throw new UnsupportedOperationException("Method not yet defined");
+        //throw new UnsupportedOperationException("Method not yet defined");
+        pixels = srcImage.toFloatArray(Image.PixelFormat.RGB);
+        for (int p = 0; p < pixels.length; p++) {
+            
+        }
     }
 
     public static Image invert(Image srcImage) {
